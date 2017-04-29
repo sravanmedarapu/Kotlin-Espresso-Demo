@@ -3,10 +3,10 @@ package com.kotlin.expresso
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.matcher.ViewMatchers.withId
-import android.support.test.espresso.matcher.ViewMatchers.withText
+import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
+import dalvik.annotation.TestTarget
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -16,6 +16,19 @@ class ApplicationTest {
 
     @Rule @JvmField
     val activity = ActivityTestRule<MainActivity>(MainActivity::class.java)
+
+    @Test
+    fun testToVerifyAppTitle() {
+        onView(withText("kotlin-espresso-demo app")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    fun testAllClearFunctionality() {
+        onView(withId(R.id.button_five)).perform(click())
+        onView(withId(R.id.result)).check(matches(withText("5")))
+        onView(withId(R.id.button_all_clear)).perform(click())
+        onView(withId(R.id.result)).check(matches(withText("0")))
+    }
 
     @Test
     fun testToAdd() {
