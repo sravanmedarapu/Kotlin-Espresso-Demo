@@ -5,6 +5,7 @@ Creating sample android application using kotlin and writting unit and espresso 
 
 ## Commands to run the tests:
 gradle runAcceptanceTests
+
 gradle runUnitTests
 
 
