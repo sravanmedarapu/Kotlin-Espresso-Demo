@@ -40,7 +40,7 @@ gen-external-apklibs
 ### Gradle ###
 .gradle
 build/
-
+.DS_Store
 # Ignore Gradle GUI config
 gradle-app.setting
 
@@ -55,6 +55,7 @@ gradle-app.setting
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
 
 *.iml
+Kotlin-Espresso-Demo.iml
 
 ## Directory-based project format:
 .idea/
